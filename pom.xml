@@ -27,13 +27,18 @@
         <!-- Hibernate / JPA -->
         <hibernate.version>4.3.6.Final</hibernate.version>
 
-        <!-- Connection pool-->
+        <!-- Connection pool -->
         <commons-dbcp2.version>2.0.1</commons-dbcp2.version>
 
         <!-- Test -->
         <junit.version>4.11</junit.version>
 
         <mysql.version>5.1.22</mysql.version>
+
+        <!-- Web jars -->
+        <webjars-bootstrap.version>3.3.1</webjars-bootstrap.version>
+        <webjars-jquery.version>2.1.1</webjars-jquery.version>
+        <webjars-jquery-ui.version>1.10.3</webjars-jquery-ui.version>
 
     </properties>
 
@@ -103,6 +108,12 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
         <!-- Test Artifacts -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -115,6 +126,22 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- Web jars -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${webjars-bootstrap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+            <version>${webjars-jquery-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${webjars-jquery.version}</version>
         </dependency>
     </dependencies>
         <!-- used by Spring MVC Test framework -->
