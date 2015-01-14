@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.lapin.store.service"/>
     <bean id = "storeDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/store"></property>
@@ -14,6 +15,7 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect" >org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
         <property name="annotatedClasses">
@@ -35,8 +37,10 @@
     <tx:annotation-driven/>
     <bean abstract="true" id="AbstractDao" class="com.lapin.store.dao.AbstractDao">
         <property name="sessionFactory" ref="storeSessionFactory"></property>
-
     </bean>
     <bean id="categoryDao" class="com.lapin.store.dao.impl.CategoryDaoImpl" parent="AbstractDao"></bean>
-
+    <bean id="goodsDao" class="com.lapin.store.dao.impl.GoodsDaoImpl" parent="AbstractDao"></bean>
+    <bean id="featureDao" class="com.lapin.store.dao.impl.FeatureDaoImpl" parent="AbstractDao"></bean>
+    <bean id="tagDao" class="com.lapin.store.dao.impl.TagDaoImpl" parent="AbstractDao"></bean>
+    <bean id="relationTypeDao" class="com.lapin.store.dao.impl.RelationTypeDaoImpl" parent="AbstractDao"></bean>
 </beans>
