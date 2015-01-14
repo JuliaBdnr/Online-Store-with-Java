@@ -1,7 +1,12 @@
 package com.lapin.store.service;
 
-/**
- * Created by Denys Lapin on 16.11.2014.
- */
+import com.lapin.store.entity.Category;
+
+import java.util.Collection;
+
 public interface CategoryService {
+    public void saveCategory(Category category);
+    public void deleteCategory(Category category);
+    public Category findCategoryById(int id);
+    public Collection<Category> findCategories();
 }

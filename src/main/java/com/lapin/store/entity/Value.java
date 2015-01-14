@@ -2,15 +2,16 @@ package com.lapin.store.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by Denys Lapin on 11.11.2014.
- */
 @Entity
 @Table(name = "value")
 public class Value {
+
     private int value_id;
+
     private int feature_id;
+
     private int goods_id;
+
     private double value;
     @Id
     public int getValue_id() {

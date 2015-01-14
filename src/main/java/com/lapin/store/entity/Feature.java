@@ -4,17 +4,18 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Denys Lapin on 02.11.2014.
- */
 @Entity
 @Table(name = "feature", schema = "", catalog = "store")
 public class Feature {
 
     private int id;
+
     private String name;
+
     private String description;
+
     private String measure;
+
     private List<Goods> goods = new ArrayList<Goods>();
 
     @Id

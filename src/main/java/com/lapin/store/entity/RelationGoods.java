@@ -2,9 +2,6 @@ package com.lapin.store.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by Denys Lapin on 02.11.2014.
- */
 @Entity
 @Table(name = "relation_goods", schema = "", catalog = "store")
 public class RelationGoods {

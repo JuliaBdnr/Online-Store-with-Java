@@ -6,13 +6,8 @@ import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-/**
- * Created by Denys Lapin on 15.11.2014.
- */
 public abstract class AbstractDao<T, I extends Serializable> implements GenericDao<T, I> {
-
-    private SessionFactory sessionFactory;
-
+    protected SessionFactory sessionFactory;
     private Class<T> genericType;
 
     public void setSessionFactory(SessionFactory sessionFactory) {
@@ -35,16 +30,10 @@ public abstract class AbstractDao<T, I extends Serializable> implements GenericD
     @Override
     public void delete(T t) {
         sessionFactory.getCurrentSession().delete(t);
-
     }
 
     @Override
-    public void updateById(I id) {
-
-    }
-
-    @Override
-    public void insert(T t) {
+    public void save(T t) {
         sessionFactory.getCurrentSession().save(t);
     }
 }

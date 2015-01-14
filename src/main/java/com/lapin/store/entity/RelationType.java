@@ -3,15 +3,12 @@ package com.lapin.store.entity;
 import javax.persistence.*;
 import java.util.Set;
 
-/**
- * Created by Denys Lapin on 02.11.2014.
- */
 @Entity
 @Table(name = "relation_type", schema = "", catalog = "store")
 public class RelationType {
 
     private int id;
-    
+
     private String name;
 
     private Set<RelationGoods> relationGoods;

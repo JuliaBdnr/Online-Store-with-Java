@@ -3,9 +3,6 @@ package com.lapin.store.entity;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Denys Lapin on 02.11.2014.
- */
 @Entity
 @Table(name = "tag", schema = "", catalog = "store")
 public class Tag {

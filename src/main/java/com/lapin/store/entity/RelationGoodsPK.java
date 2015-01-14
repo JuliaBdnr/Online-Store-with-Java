@@ -4,9 +4,6 @@ import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
-/**
- * Created by Denys Lapin on 02.11.2014.
- */
 @Embeddable
 public class RelationGoodsPK implements Serializable {
 
